@@ -1,0 +1,25 @@
+server:
+  shutdown: graceful
+  servlet:
+    context-path: /home
+spring:
+  profiles:
+    active: @spring.profiles.active@
+  application:
+    name: @project.artifactId@
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: non_null
+    time-zone: GMT+8
+knife4j:
+  cloud:
+    ## 参考注册API中的accessKey
+    accessKey: JDUkd1YvSi5zZmUkMHYuSGNmN1hMazJPajJuMjNJVW43dWNyL2tyR3N4bzJaa1A2ZC5mSUlwNA
+    ## 项目编号
+    code: dream_home
+    ## Knife4jCloud的对外域名地址
+    server: http://127.0.0.1:19011
+    ## 当前服务是否是HTTPS的,默认可以不配置,并且该参数默认为false
+    ssl: false
+    ## 参考注册API中的client属性,该参数可以不配置,只有在域名的情况下需要进行配置
+    client: http://test.domain.com

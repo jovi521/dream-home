@@ -1,0 +1,60 @@
+# server
+server:
+  port: 8001
+# log
+logging:
+  level:
+    com.dream.home: debug
+    org.springframework: info
+# actuator
+management:
+  health:
+    mail:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      # CORS跨域支持
+      cors:
+        allowed-origins: "*"
+        allowed-methods: GET,POST
+  #health端点的访问权限
+  endpoint:
+    health:
+      #选择展示
+      show-details: always
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: mysql
+    druid:
+      #      基础配置
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/dream-home?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&transformedBitIsBoolean=true&useSSL=false&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true
+      username: root
+      password: 123456
+      #     连接池配置
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      #Oracle需要打开注释
+      #validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      validation-query: SELECT 1
+      filters: stat,wall
+      #      监控配置
+      stat-view-servlet:
+        enabled: on
+        url-pattern: /druid/*
+        reset-enable: on
+        login-username: admin
+        login-password: SWSW_ENC(/WrawrEEVhC0XKd7F0fOKdu6iEMWladjQHuFIIIelzFB9gTn1YImD8EykCVYGhPt)
