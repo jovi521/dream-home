@@ -34,9 +34,15 @@ public class TenantController {
         return CommonResult.success(flag);
     }
 
-    @PostMapping("/updateById")
+    @PutMapping("/updateById")
     public CommonResult<?> updateById(@RequestBody Tenant tenant) {
         boolean flag = tenantService.updateById(tenant);
+        return CommonResult.success(flag);
+    }
+
+    @DeleteMapping("/removeById/{id}")
+    public CommonResult<?> removeById(@PathVariable("id") Integer id) {
+        boolean flag = tenantService.removeById(id);
         return CommonResult.success(flag);
     }
 }

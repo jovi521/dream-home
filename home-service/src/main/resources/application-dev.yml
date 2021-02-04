@@ -58,3 +58,17 @@ spring:
         reset-enable: on
         login-username: admin
         login-password: SWSW_ENC(/WrawrEEVhC0XKd7F0fOKdu6iEMWladjQHuFIIIelzFB9gTn1YImD8EykCVYGhPt)
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    use-generated-keys: true
+  global-config:
+    banner: true
+    db-config:
+      capital-mode: true
+      table-prefix: t_
+      logic-delete-field: delete_flag
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+  type-aliases-package: com.dream.home.entity
+
