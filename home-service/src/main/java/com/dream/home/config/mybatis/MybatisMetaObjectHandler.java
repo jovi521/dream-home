@@ -1,4 +1,4 @@
-package com.dream.home.config;
+package com.dream.home.config.mybatis;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
