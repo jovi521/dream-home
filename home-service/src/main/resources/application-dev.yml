@@ -58,6 +58,9 @@ spring:
         reset-enable: on
         login-username: admin
         login-password: SWSW_ENC(/WrawrEEVhC0XKd7F0fOKdu6iEMWladjQHuFIIIelzFB9gTn1YImD8EykCVYGhPt)
+    xa:
+      properties:
+        useInformationSchema: true
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
